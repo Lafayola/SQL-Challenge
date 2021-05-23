@@ -1,3 +1,42 @@
+drop table if exists salary cascade;
+drop table if exists title cascade;
+drop table if exists department_manager cascade;
+drop table if exists department_employee cascade;
+drop table if exists department cascade;
+drop table if exists employee cascade;
+create table employee (
+emp_no integer not null,
+emp_title_id char(5),
+birth_date date,
+first_name varchar(50),
+last_name varchar(50),
+sex char(1),
+hire_date date);
+create table department (
+dept_no char(5) not null,
+dept_name varchar(50)
+);
+create table salary (
+emp_no integer not null,
+salary integer
+);
+create table title (
+title_id char(5) not null,
+title varchar(50)
+);
+create table department_manager (
+dept_no char(5) not null,
+emp_no integer not null
+);
+create table department_employee (
+emp_no integer not null,
+dept_no char(5) not null
+);
+alter table department add constraint PK_001 primary key (dept_no);
+alter table salary add constraint PK_002 primary key (emp_no);
+alter table title add constraint PK_003 primary key (title_id);
+alter table department_man
+
 -- List the following details of each employee: employee number, last name, first name, sex, and salary
 
 SELECT employee number, last_name, first_name, sex,salary
